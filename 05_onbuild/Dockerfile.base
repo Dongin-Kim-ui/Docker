@@ -1,0 +1,15 @@
+# Base Image Configuration
+FROM ubuntu:22.04
+
+# Nginx 설치
+RUN apt -y update && apt -y upgrade 
+RUN apt -y install nginx
+
+#  포트 지정
+EXPOSE 80
+
+# 웹 콘텐츠 배치 - 지금 바로 실행되지 않고 다음번째 빌드할 때 실행이 된다.
+ONBUILD ADD website.tar /var/www/html/
+
+# Nginx 실행
+CMD ["nginx", "-g", "daemon off;"]

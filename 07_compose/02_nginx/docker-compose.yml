@@ -1,0 +1,8 @@
+# 실습시 사용하는 예제
+version: "3"
+
+services:
+  web:
+    image: nginx
+    ports: 
+      - "8080:80"

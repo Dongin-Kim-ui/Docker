@@ -1,0 +1,14 @@
+services: 
+  web:
+    image: jmalloc/echo-server
+
+  haproxy:
+    image: haproxytech/haproxy-alpine:2.7
+    volumes: 
+      - "./config:/usr/local/etc/haproxy:ro"
+    ports:
+      - "80:80"
+    depends_on: 
+      - web
+
+      

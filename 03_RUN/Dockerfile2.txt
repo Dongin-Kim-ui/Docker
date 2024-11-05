@@ -1,0 +1,6 @@
+# 베이스 이미지
+FROM ubuntu:22.04
+
+# top 실행
+ENTRYPOINT ["top"]
+CMD ["-d", "10"]
